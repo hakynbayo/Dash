@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
-import { InputLabel } from '@/components/input';
+import InputLabel from '@/components/input/inputLabel';
 import { InputProps } from '@/components/input/types';
 
 export default function Input({
@@ -49,7 +49,7 @@ export default function Input({
                 variant === 'primary' && 'bg-white',
                 variant === 'secondary' && 'bg-secondary-grey',
               ],
-              [touched && error && 'bg-primary-red/10']
+              [touched && error && 'bg-primary-red/10'],
             )}
           >
             <input
@@ -61,7 +61,7 @@ export default function Input({
               className={cn(
                 'placeholder:text-secondary-grey text-primary-black w-full border-0 bg-transparent px-2 py-1 text-xs shadow-none outline-none ring-0 placeholder:text-xs focus:ring-0 md:px-4 md:text-sm md:placeholder:text-sm lg:text-base lg:placeholder:text-base',
                 [className && className],
-                [inputClassName && inputClassName]
+                [inputClassName && inputClassName],
               )}
               required={required}
             />
@@ -118,7 +118,7 @@ export default function Input({
                 variant === 'primary' && ' bg-white',
                 variant === 'secondary' && 'bg-secondary-grey',
               ],
-              [touched && error && 'bg-primary-red/10']
+              [touched && error && 'bg-primary-red/10'],
             )}
           >
             <input
@@ -129,7 +129,7 @@ export default function Input({
               className={cn(
                 'placeholder:text-secondary-grey text-primary-black w-full border-0 bg-transparent px-2 py-1 text-xs shadow-none outline-none ring-0 placeholder:text-xs focus:ring-0 md:px-4 md:text-sm md:placeholder:text-sm lg:text-base lg:placeholder:text-base',
                 [className && className],
-                [inputClassName && inputClassName]
+                [inputClassName && inputClassName],
               )}
               required={required}
             />

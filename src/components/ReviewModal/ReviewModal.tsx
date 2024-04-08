@@ -11,10 +11,7 @@ import Checkbox from '@/components/input/checkbox';
 
 import { ResponseProps } from './type';
 
-const Review: React.FC<ResponseProps> = ({
-  handleCloseModal,
-  isOpen,
-}) => {
+const Review: React.FC<ResponseProps> = ({ handleCloseModal, isOpen }) => {
   const [rating, setRating] = useState<number>(0);
   const [reviewText, setReviewText] = useState<string>('');
   const [anonymousChecked, setAnonymousChecked] = useState<boolean>(false);
@@ -30,13 +27,22 @@ const Review: React.FC<ResponseProps> = ({
   const handleSubmit = () => {
     // Handle submit logic here
     // For demonstration, we'll just show a toast message
-    toast.success("Review Submitted", {
-      style: { color: '#28a745', border: '1px solid #28a745', padding: '1px 8px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }
+    toast.success('Review Submitted', {
+      style: {
+        color: '#28a745',
+        border: '1px solid #28a745',
+        padding: '1px 8px',
+        textAlign: 'center',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
     });
-    handleCloseModal()
+    handleCloseModal();
   };
 
-  const address = typeof window !== 'undefined' ? window.location.search.split('=')[1] : '';
+  const address =
+    typeof window !== 'undefined' ? window.location.search.split('=')[1] : '';
   const UrlParams = new URLSearchParams(address);
 
   return (
@@ -75,14 +81,14 @@ const Review: React.FC<ResponseProps> = ({
 
           <div className='flex flex-col gap-2'>
             <p className='text-sm font-medium'>Rate Location</p>
-            <div className="flex gap-3 items-center">
+            <div className='flex gap-3 items-center'>
               {[...Array(5)].map((_, index) => (
                 <PiStarFill
                   key={index}
                   size={20}
                   onClick={() => handleClick(index)}
                   color={index < rating ? '#FFC70066' : '#E5E7EB'}
-                  className="cursor-pointer"
+                  className='cursor-pointer'
                 />
               ))}
             </div>
@@ -90,9 +96,7 @@ const Review: React.FC<ResponseProps> = ({
 
           <div className='w-full flex flex-col gap-4'>
             <div className='flex flex-col gap-2'>
-              <label htmlFor='review'
-                className='text-sm font-medium'
-              >
+              <label htmlFor='review' className='text-sm font-medium'>
                 Write Review
               </label>
               <textarea
@@ -122,8 +126,9 @@ const Review: React.FC<ResponseProps> = ({
 
           <div className='w-full flex gap-4 mb-2'>
             <Button
-              className={`w-1/2 bg-blue py-4 px-8 flex justify-center items-center rounded-md text-base text-white ${(rating === 0) && 'opacity-30 pointer-events-none' // Apply reduced opacity and disable pointer events if button is disabled
-                }`}
+              className={`w-1/2 bg-blue py-4 px-8 flex justify-center items-center rounded-md text-base text-white ${
+                rating === 0 && 'opacity-30 pointer-events-none' // Apply reduced opacity and disable pointer events if button is disabled
+              }`}
               onClick={handleSubmit}
               disabled={rating === 0}
             >
@@ -137,11 +142,10 @@ const Review: React.FC<ResponseProps> = ({
               Cancel
             </Button>
           </div>
-
         </div>
       </Modal>
       <ToastContainer
-        position="top-center"
+        position='top-center'
         autoClose={3000} // Duration for which the toast message will be displayed
         hideProgressBar={true} // Show or hide the progress bar
         newestOnTop={false} // Display newest toast messages on top

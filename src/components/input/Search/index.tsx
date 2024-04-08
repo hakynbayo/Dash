@@ -1,13 +1,14 @@
 import { useFormik } from 'formik';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ImSpinner2 } from 'react-icons/im';
-import { MdOutlineClear } from "react-icons/md";
+import { MdOutlineClear } from 'react-icons/md';
 
 import { cn } from '@/lib/utils';
 
 import { initialValues, validationSchema } from './validation';
 
-export interface InputSearchProp extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputSearchProp
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   isLoading?: boolean;
   variant?: 'primary' | 'secondary';
   touched?: boolean;
@@ -59,7 +60,9 @@ const InputSearch = ({
       }
 
       // Reload the page and update with new params
-      typeof window !== 'undefined' ? window.location.href = `/home?${params.toString()}` : '';
+      typeof window !== 'undefined'
+        ? (window.location.href = `/home?${params.toString()}`)
+        : '';
     },
   });
 
@@ -80,7 +83,7 @@ const InputSearch = ({
         [containerClassName && containerClassName],
       )}
     >
-      <div className="relative">
+      <div className='relative'>
         <input
           type='text'
           inputMode='search'
@@ -97,8 +100,8 @@ const InputSearch = ({
         />
         {formik.values.search && (
           <button
-            type="button"
-            className="absolute right-4 top-0 bottom-0 flex items-center px-2 text-gray-400 hover:text-gray-600"
+            type='button'
+            className='absolute right-4 top-0 bottom-0 flex items-center px-2 text-gray-400 hover:text-gray-600'
             onClick={handleClearSearch}
           >
             <MdOutlineClear />

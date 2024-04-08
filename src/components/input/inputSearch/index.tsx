@@ -70,7 +70,6 @@ const InputSearch = ({
   });
 
   return (
-
     <form
       onSubmit={formik.handleSubmit}
       className={cn(

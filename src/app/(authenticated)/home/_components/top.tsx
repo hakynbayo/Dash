@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
@@ -16,7 +16,7 @@ const Top = () => {
 
   const toggleReviewModal = () => {
     setIsReviewModalOpen(!isReviewModalOpen);
-  }
+  };
 
   useEffect(() => {
     if (containerRef.current) {
@@ -45,10 +45,9 @@ const Top = () => {
   };
 
   // Access location parameter on client-side only
-  const address = typeof window !== 'undefined' ? window.location.search.split('=')[1] : '';
+  const address =
+    typeof window !== 'undefined' ? window.location.search.split('=')[1] : '';
   const UrlParams = new URLSearchParams(address);
-
-
 
   return (
     <div className='fixed top-10 md:top-24 z-10 mb-10 flex w-full items-center justify-between bg-[#F2F6FD] px-6 py-4 backdrop-blur-lg backdrop-filter sm:px-10 lg:px-16 xl:px-28'>
@@ -58,13 +57,20 @@ const Top = () => {
             <h1 className='text-xl md:text-3xl font-medium text-black'>
               {UrlParams}
             </h1>
-            <p className='text-sm md:text-base text-black'> <span className='font-semibold'>"450"</span> Reviews <span className='font-normal'>(People are raving about the selected location)</span></p>
+            <p className='text-sm md:text-base text-black'>
+              {' '}
+              <span className='font-semibold'>"450"</span> Reviews{' '}
+              <span className='font-normal'>
+                (People are raving about the selected location)
+              </span>
+            </p>
           </div>
           <div className=' flex justify-between lg:justify-start lg:items-center gap-4'>
             <div>
               <Button
                 onClick={toggleReviewModal}
-                className='bg-blue py-4 px-8 rounded-md'>
+                className='bg-blue py-4 px-8 rounded-md'
+              >
                 <span className='text-sm xl:text-base'> Leave Review </span>
               </Button>
               <ReviewModal
@@ -105,7 +111,10 @@ const Top = () => {
               {'<'}
             </Button>
           )}
-          <div className='w-[1160px] no-scrollbar overflow-x-auto' ref={containerRef}>
+          <div
+            className='w-[1160px] no-scrollbar overflow-x-auto'
+            ref={containerRef}
+          >
             <Tags />
           </div>
           {scrollPosition < containerWidth && (
@@ -117,12 +126,9 @@ const Top = () => {
             </Button>
           )}
         </div>
-
       </div>
-
     </div>
   );
 };
 
 export default Top;
-

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -7,7 +7,7 @@ const images = [
   '/svg/image1.svg',
   '/svg/image2.svg',
   '/svg/image3.svg',
-  '/svg/image4.svg'
+  '/svg/image4.svg',
 ];
 
 const ReviewImages: React.FC = () => {
@@ -30,8 +30,9 @@ const ReviewImages: React.FC = () => {
             alt={`Image ${index + 1}`}
             width={240}
             height={240}
-            className={`relative cursor-pointer transition-transform duration-300 transform ${hoveredImage === index ? 'scale-75 z-10' : 'scale-100'
-              }`}
+            className={`relative cursor-pointer transition-transform duration-300 transform ${
+              hoveredImage === index ? 'scale-75 z-10' : 'scale-100'
+            }`}
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           />

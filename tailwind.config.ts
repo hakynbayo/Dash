@@ -28,7 +28,7 @@ export default {
         'light-black': '#1E1E1E99',
         blue: '#3366FF',
         yellow: '#FABB07',
-        'light-blue': '#D4DCF1'
+        'light-blue': '#D4DCF1',
       },
       keyframes: {
         flicker: {

@@ -1,1 +1,1 @@
-export { default as PaddedContainer } from "./paddedContainer";
+export { default as PaddedContainer } from './paddedContainer';

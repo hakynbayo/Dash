@@ -1,4 +1,3 @@
-
 export const product = [
   {
     label: 'sample 1',

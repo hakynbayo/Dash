@@ -43,8 +43,6 @@ const Reviews: React.FC = () => {
         <ReviewItem key={index} {...review} />
       ))}
     </div>
-
-
   );
 };
 

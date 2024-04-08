@@ -41,11 +41,11 @@ export type SelectProps = React.SelectHTMLAttributes<
   }[];
   setValue?: (
     value: string,
-    shouldValidate: boolean
+    shouldValidate: boolean,
   ) => Promise<void | FormikErrors<unknown>>;
   setTouched?: (
     touched: boolean,
-    shouldValidate: boolean
+    shouldValidate: boolean,
   ) => Promise<void | FormikErrors<unknown>>;
   value?: string;
 };
@@ -75,11 +75,11 @@ export type InputFileProps = React.InputHTMLAttributes<HTMLInputElement> & {
   touched?: boolean;
   setValue?: (
     value: (string | File)[],
-    shouldValidate: boolean
+    shouldValidate: boolean,
   ) => Promise<void | FormikErrors<unknown>>;
   setTouched?: (
     touched: boolean,
-    shouldValidate: boolean
+    shouldValidate: boolean,
   ) => Promise<void | FormikErrors<unknown>>;
   type?: InputFileType;
   inputClassName?: string;
